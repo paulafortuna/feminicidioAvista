@@ -1,0 +1,8 @@
+version: '3'
+services:
+  db:
+    image: paulafortuna/mongo-feminicidio 
+    ports:
+    - "27017:27017"
+    container_name: db
+    volumes: [~/mongo/data:/data/db]
