@@ -1,6 +1,26 @@
 version: '3'
 services:
 
+  db:
+    image: paulafortuna/mongo-feminicidio
+    ports:
+      - "27017:27017"
+    container_name: db
+    volumes: [ ~/mongo/data:/data/db ]
+
+    python:
+      build: ./app
+      ports:
+        - "7500:7500"
+      container_name: feminicidioAvista_container
+      image: python:3.8-buster
+      stdin_open: true
+      restart: unless-stopped
+      volumes: [ ~/python/data:/data/feminicidio ]
+      links:
+        - db
+
+
   python:
     build:
       context: app

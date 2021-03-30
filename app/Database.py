@@ -7,7 +7,7 @@ from pandas import DataFrame
 
 class Database:
     # open connection
-    client = MongoClient('mongodb://localhost:27017')
+    client = MongoClient(host='db', port=27017)
 
     # get db and collections
     db = client['arquivo_feminicidio']

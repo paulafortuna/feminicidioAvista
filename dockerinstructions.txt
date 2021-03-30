@@ -1,0 +1,8 @@
+- add Dockerfile in every app
+- to build the image and run it use these instructions in the DOckerfile directory:
+docker build -t python:latest .
+docker run python:latest
+
+- add a docker-compose.yml file
+docker-compose build
+docker-compose up -d

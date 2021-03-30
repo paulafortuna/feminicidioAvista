@@ -150,6 +150,6 @@ class Crawler:
 
 print("it is running")
 
-c = Crawler(1)
+c = Crawler(3)
 c.crawling()
 

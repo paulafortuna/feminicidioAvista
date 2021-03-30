@@ -1,6 +1,8 @@
-FROM paulafortuna/ubuntu-python-feminicidio
+FROM python:3.8-buster
 
-WORKDIR /app
-COPY . .
+ADD . /
+RUN pip install -r requirements.txt
+ENV PYTHONUNBUFFERED 1
 
-CMD ['python3.8', 'Crawler.py']
+CMD ["python", "-u", "./Crawler.py"]
+
