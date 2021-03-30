@@ -6,6 +6,9 @@ from pandas import DataFrame
 
 
 class Database:
+    """
+    This class encapsulates all the connections and queries to the mongodb where the collected news are stored.
+    """
     # open connection
     client = MongoClient(host='db', port=27017)
 
@@ -19,11 +22,31 @@ class Database:
 
     @classmethod
     def put_into_database(cls, db_news, news):
-        # transfer dataframe to dabase
+        '''
+        Directly inserts news in the database.
+
+        Arguments
+        ----------
+        db_news : The database news table where to insert.
+        news : The news object to insert.
+        '''
+        # transfer dataframe to database
         db_news.insert(news)
 
     @classmethod
     def save_crawler(cls, db_crawler, id, newspaper, keyword, offset, year):
+        """
+        Puts all crawler data in a dictionary and inserts it in the database.
+
+        Arguments
+        ----------
+        db_crawler : The database crawler table where to update.
+        id : The id of the crawler to update.
+        newspaper : The newspaper of the crawler to update.
+        keyword : The keyword of the crawler to update.
+        offset : The offset of the crawler to update.
+        year : The year of the crawler to update.
+        """
         register_crawler = {'id': id,
                             'current_newspaper': newspaper,
                             'keyword': keyword,
@@ -34,6 +57,18 @@ class Database:
 
     @classmethod
     def update_crawler(cls, db_crawler, id, newspaper, keyword, offset, year):
+        """
+        Updates all crawler data in a dictionary and inserts it in the database.
+
+        Arguments
+        ----------
+        db_crawler : The database crawler table where to insert.
+        id : The id of the crawler to insert.
+        newspaper : The newspaper of the crawler to insert.
+        keyword : The keyword of the crawler to insert.
+        offset : The offset of the crawler to insert.
+        year : The year of the crawler to insert.
+        """
         register_crawler = {'id': id,
                             'current_newspaper': newspaper,
                             'keyword': keyword,
@@ -45,6 +80,24 @@ class Database:
 
     @classmethod
     def starting_crawler(cls, db_crawler, id, newspaper, keyword, offset, year):
+        '''
+        Method that starts a crawler in the database.
+        If crawler with id already exists in the database, reads properties.
+        If does not exist creates new.
+
+        Arguments
+        ----------
+        db_crawler : The database crawler table where to insert.
+        id : The id of the crawler to insert.
+        newspaper : The newspaper of the crawler to insert.
+        keyword : The keyword of the crawler to insert.
+        offset : The offset of the crawler to insert.
+        year : The year of the crawler to insert.
+
+        Return
+        ----------
+        crawler_json : is a dictionary with crawler properties
+        '''
         # if a register for the crawler does not exist in the database create one
         crawler_json = db_crawler.find_one({"id": id})
         if crawler_json is None:
@@ -54,6 +107,14 @@ class Database:
 
     @classmethod
     def news_exist(cls, db_news, news_json):
+        """
+        Check if news exist in db.
+
+        Arguments
+        ----------
+        db_news : The database news table where to check.
+        news : The news object to check.
+        """
         crawler_json = db_news.find_one({"arquivo_hash": news_json['arquivo_hash']})
         if crawler_json is None:
             return False
@@ -61,6 +122,17 @@ class Database:
 
     @classmethod
     def get_all_crawled_news(cls, db_news):
+        """
+        Get all the news in the database.
+
+        Arguments
+        ----------
+        db_news : The database news table where to check.
+
+        Return
+        ----------
+        df : A pandas dataframe with all the news in the database.
+        """
         df = pd.DataFrame(list(db_news.find()))
         return df
 

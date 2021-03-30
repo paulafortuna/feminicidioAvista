@@ -1,5 +1,11 @@
 
 class Variables:
+    """
+    This class stores different variables related with the crawlers and news
+    stored from arquivo.pt.
+    """
+
+    arquivo_start_year = 1996
 
     newspaper_site = {
         'publico': 'http://www.publico.pt',
