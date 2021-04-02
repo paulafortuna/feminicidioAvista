@@ -28,12 +28,13 @@ class Variables:
                       'jornal_noticias'
                       ]
 
-    keywords = ['feminicidio',
+    keywords = [
+                'violencia domestica',
+                'violação',
+                'feminicidio',
                 'feminicidios',
                 'femicidio',
                 'femicidios',
-                'violencia domestica',
-                'violação',
                 'violações',
                 'assassinada',
                 'assassinadas',

@@ -4,5 +4,5 @@ ADD . /
 RUN pip install -r requirements.txt
 ENV PYTHONUNBUFFERED 1
 
-CMD ["python", "-u", "./Crawler.py"]
+CMD ["python", "-u", "./app.py"]
 

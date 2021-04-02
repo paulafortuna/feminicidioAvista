@@ -29,6 +29,8 @@ class Crawler:
     # the newspaper that is currently being searched
     db_newspaper = Variables.newspaper_list[0]
     # offset is a variable used in arquivo.pt
+    standard_offset = 0
+    # the db stored offset
     db_offset = 0
     # maxItems is a variable used in arquivo.pt
     maxItems = 200
@@ -75,7 +77,6 @@ class Crawler:
         newspaper : str
             The crawled newspaper to add to the news json.
         """
-        print(news_item)
         url = news_item['linkToNoFrame']
         try:
             news_article = Article(url, language="pt")
@@ -119,9 +120,11 @@ class Crawler:
                         print(keyword)
                         print(newspaper)
                         print(year)
-                        offset = Crawler.db_offset
+                        offset = Crawler.standard_offset
+                        print("We are starting and offset: " + str(offset))
                         while True:
                             try:
+                                print("this was a new request")
                                 # first search and then analyse result
                                 r = requests.get('http://arquivo.pt/textsearch?' +
                                                  'q=' + keyword + '&' +
@@ -139,6 +142,7 @@ class Crawler:
                                 # check content length to see if we got response
                                 if len(r_json_data['response_items']) > 0:
                                     # save current response elements
+                                    print("here?")
                                     print(len(r_json_data['response_items']))
                                     for news_item in r_json_data['response_items']:
                                         news_json = Crawler.process_news_url_to_json(news_item, newspaper)
@@ -148,9 +152,17 @@ class Crawler:
                                             Database.put_into_database(Database.db_news, news_json)
                                     # add previous response and continue until returns empty result
                                     previous_result_size = len(r_json_data['response_items'])
+                                    print("pre update")
+                                    print(offset)
                                     offset = offset + previous_result_size
+                                    print("pos update")
+                                    print(offset)
                                     Database.update_crawler(Database.db_crawler, Crawler.crawler_id, newspaper, keyword,
                                                             offset, year)
+                                    # a result of size <199 should mean that our offset is useless
+                                    # because answer size can be 200
+                                    if previous_result_size == 1:
+                                        break
                                 else:
                                     Database.update_crawler(Database.db_crawler, Crawler.crawler_id, newspaper, keyword,
                                                             offset, year)
@@ -199,8 +211,5 @@ class Crawler:
         return False
 
 
-print("it is running")
 
-c = Crawler(1)
-c.crawling()
 

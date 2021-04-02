@@ -10,7 +10,8 @@ class Database:
     This class encapsulates all the connections and queries to the mongodb where the collected news are stored.
     """
     # open connection
-    client = MongoClient(host='db', port=27017)
+    #client = MongoClient(host='192.168.32.2', port=27017) # locally run
+    client = MongoClient(host='db', port=27017) # run docker
 
     # get db and collections
     db = client['arquivo_feminicidio']
@@ -123,7 +124,7 @@ class Database:
     @classmethod
     def get_all_crawled_news(cls, db_news):
         """
-        Get all the news in the database.
+        Get all the news in the crawled collection of the database.
 
         Arguments
         ----------
@@ -138,6 +139,16 @@ class Database:
 
     @classmethod
     def save_posprocessed_crawled_news(cls, db_pos_processed_news, df):
+        """
+        After crawling some news are pos processed. Those are then saved in a special collection in the database.
+
+        Arguments
+        ----------
+        db_pos_processed_news : collection
+           collection where all the pos processed news should be saved.
+        df: pandas dataframe
+           the dataframe to be saved.
+        """
 
         # erase dates that are problematic for mongo db
         df['arquivo_date'] = df['arquivo_date'].dt.strftime('%Y-%m-%d %H:%M:%S')
@@ -152,7 +163,17 @@ class Database:
 
     @classmethod
     def save_initialized_keywords_news(cls, db_keywords_news, df):
+        """
+        We create the collection for the keyword annotated news and save there all news
+        marking that they were not annotated yet.
 
+        Arguments
+        ----------
+        db_keywords_news : collection
+           collection where all the keyword annotated news should be saved.
+        df: pandas dataframe
+           the dataframe to be saved.
+        """
         # rename id mongo column
         df = df.rename(columns={'_id': 'pos_processed_news'})
 
@@ -160,8 +181,17 @@ class Database:
         db_keywords_news.insert_many(df.to_dict('records'))
 
     @classmethod
-    def save_keywords_news(cls, db_pos_processed_news, df):
+    def save_keywords_news(cls, db_keywords_news, df):
+        """
+        We save there all news marking that they were already annotated.
 
+        Arguments
+        ----------
+        db_keywords_news : collection
+           collection where all the keyword annotated news should be saved.
+        df: pandas dataframe
+           the dataframe to be saved.
+        """
         # erase dates that are problematic for mongo db
         df['arquivo_date'] = df['arquivo_date'].dt.strftime('%Y-%m-%d %H:%M:%S')
         df['news_site_date'] = df['news_site_date'].dt.strftime('%Y-%m-%d %H:%M:%S')
@@ -171,15 +201,31 @@ class Database:
         df = df.rename(columns={'_id': 'news_table_id'})
 
         # insert in database
-        db_pos_processed_news.insert_many(df.to_dict('records'))
+        db_keywords_news.insert_many(df.to_dict('records'))
 
     @classmethod
     def get_all_posprocessed_crawled_news(cls, db_pos_processed_news):
+        """
+        After pos processing we get all pos processed news.
+
+        Arguments
+        ----------
+        db_pos_processed_news : collection
+           collection where all the pos processed news are saved.
+        """
         df = pd.DataFrame(list(db_pos_processed_news.find()))
         return df
 
     @classmethod
     def get_all_non_keyword_annotated_news(cls, db_keywords_news):
+        """
+        We get all news that were not keyword annotated yet.
+
+        Arguments
+        ----------
+        db_keywords_news : collection
+           collection where all the keyword annotated news are saved.
+        """
         result = db_keywords_news.find({
             "search_keywords": {"$eq": False}
         })
@@ -187,7 +233,16 @@ class Database:
 
     @classmethod
     def update_keyword_annotated_news(cls, db_keywords_news, df):
+        """
+        We save there all news marking that they were already annotated.
 
+        Arguments
+        ----------
+        db_keywords_news : collection
+           collection where all the keyword annotated news should be saved.
+        df: pandas dataframe
+           the dataframe to be saved.
+        """
         bulk_operation = db_keywords_news.initialize_unordered_bulk_op()
 
         # Address filed to be added to all documents
@@ -203,6 +258,15 @@ class Database:
 
     @classmethod
     def get_all_keyword_murdered_women_news(cls, db_keywords_news):
+        """
+        We get all keyword annotated news and retrieve the ones that had a keyword of type "murdered women" so that
+        we retrieve candidates to feminicide news.
+
+        Arguments
+        ----------
+        db_keywords_news : collection
+           collection where all the keyword annotated news are saved.
+        """
         result = db_keywords_news.find({
             "mulheres_assassinadas": {"$eq": True}
         })
