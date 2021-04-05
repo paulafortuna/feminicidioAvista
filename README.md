@@ -11,13 +11,13 @@ This repository presents the structure of the "Feminicídio À Vista" project. I
 ![project_structure](https://github.com/paulafortuna/images/blob/main/feminicidio(4).jpg)
 
 
-### 1) Arquivo.pt News Crawling and Processing (Python Back-end)
-### 2) MongoDB storage
-### 3) Classification and Metrics (Python Back-end)
-### 4) Dataset
-### 5) Visualization in a Dash Web-App (Front-end)
+### 1) Femicide News Crawler in Arquivo.pt (Python Back-end Container)
+### 2) Femicide News Storage (MongoDB  Container)
+### 3) News Annotation and Metrics (Python Back-end Container)
+### 4) Femicide News Annotated Dataset
+### 5) Dash Front-end (Feminicídio À Vista Web App)
 
-### Extra: Configuration with Docker
+### Extra: Configuration with docker-compose
 
 
 
