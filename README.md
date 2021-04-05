@@ -8,7 +8,7 @@
 ### Repository
 This repository presents the structure of the "Feminicídio À Vista" project. It centralizes the back-end of this project, and it links to the front-end repository and the built dataset. The following scheme summarizes the project structure and readme structure.
 
-![project_structure](https://github.com/paulafortuna/images/blob/main/feminicidio(3).jpg)
+![project_structure](https://github.com/paulafortuna/images/blob/main/feminicidio(4).jpg)
 
 
 ### 1) Arquivo.pt News Crawling and Processing (Python Back-end)
