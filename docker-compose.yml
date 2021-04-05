@@ -26,6 +26,18 @@ services:
     networks:
       - backend
 
+  classification:
+    build:
+      context: ./classification
+      dockerfile: Dockerfile
+    image: python:3.8-buster
+    ports:
+      - "5000:5000"
+    container_name: feminicidioAvista_classifier
+    stdin_open: true
+    restart: unless-stopped
+    volumes: [ ~/python/classification:/classification]
+
 networks:
   backend:
     driver: bridge
