@@ -37,7 +37,7 @@ The crawling of the news took around 3 days.
 The pos processing consisted of cleaning the database and storing a subset of news. The pos processing took care of: erase news without title or text, erase news where the text has less than 4 words and drop news with repeated title.
 
 #### 1.3 Keyword confirmation
-As it was not 100% transparent the matching between Keywords and pages from the archive it was important to conduct a new filtering of news so that we assure that news contain keywords at least in the title or body. For the match, I also consider that it occurres even if the words in the keyword are not contiguous.
+It was not 100% transparent the matching between Keywords and pages. For instance I verified that some news pages would match but because in the footnote there would be referrence to other news. From the archive it was important to conduct a new filtering of news so that we assure that news contain keywords at least in the title or body. For the match, I also consider that it occurres even if the words in the keyword are not contiguous.
 
 ### 2) Femicide News Storage (MongoDB  Container)
 The database in this project contains a collection for each of the steps happening in the previous section. I've opted for this strategy so that new experiments with the data can be done in each step. The corresponding structure is:
