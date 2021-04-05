@@ -15,7 +15,7 @@ INSERT IMAGE
 ### 2) MongoDB storage
 ### 3) Classification and Metrics (Python Back-end)
 ### 4) Dataset
-### 5) Visualization in a Dash Web-App
+### 5) Visualization in a Dash Web-App (Front-end)
 
 ### Extra: Configuration with Docker
 
