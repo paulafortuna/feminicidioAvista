@@ -32,4 +32,5 @@ class CasesAnnotation:
                     df.at[iter, 'title_countains_keyword'] = True
 
         # save it in a file
-        df.to_csv('news_to_manually_annotate.tsv',sep='\t')
+        df[df['title_countains_keyword'] == True].to_csv('/data/feminicidio/news_to_manually_annotate.tsv',sep='\t')
+

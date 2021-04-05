@@ -3,7 +3,7 @@ services:
 
   python:
     build:
-      context: ./app
+      context: ./crawling
       dockerfile: Dockerfile
     image: python:3.8-buster
     ports:
