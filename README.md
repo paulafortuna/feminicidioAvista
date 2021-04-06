@@ -64,9 +64,7 @@ Regarding metrics we extracted femicide news frequencies over year and district.
 ![news_ano_distrito](https://github.com/paulafortuna/images/blob/main/ano_distrito.svg)
 
 #### *** Automatic Classification
-
-
-
+I've investigated the usability of this dataset for machine learning seupervised classification tasks. I've used BERT multilingual, which can be applied to Portuguese. The calssification results with this dataset seem that in the future a automatic classifier can be used to crawl all the available news in order to find new crime instances. In the exxtracted metrics and web app section I've opted to present only manually annotated data, so that the presented results are more ethical and absent of automatic classification error. I run the BERT classifier code in colab, so that I've access to TPU. Here it is the link for this [project](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/statistics_plot_computation.ipynb).  
 
 ### 4) Femicide News Annotated Dataset
 The resulting file can be found in this [repository](https://github.com/paulafortuna/feminicidioAvista_dataset). 
