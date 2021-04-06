@@ -59,6 +59,10 @@ With the annotated data I aimed then at automatically extract the geolocation of
 With the entities extracted from the previous step I've used the geopy library and Nominatim API which offers an interface to the OpenStreetMap, for each entity I've extracted latitude and longitude, and for each news I've averaged the different local entities positions so this maps to an unique point that centralizes where the crime have happened. Of course this is an approximation and it implies some error, but overall the results seem quite satisfying, when displayed in the [map](https://feminicidioavista.herokuapp.com/). In our web app we have displayed only Continental Portugal crimes, and have excluded either other countries or Azores and Madeira, which should be addressed in future venues of this project.
 
 #### 3.4 Metrics
+Regarding metrics we extracted femicide news frequencies over year and district. We also presented different tables where the different news titles can be read. This helps to understand the collected news and to have an idea on how the media is presenting femicide. This should bring insight to future steps of this project.
+![news_ano](https://github.com/paulafortuna/images/blob/main/scheme_3.jpg)
+![news_distrito](https://github.com/paulafortuna/images/blob/main/scheme_3.jpg)
+
 
 #### *** Automatic Classification
 
