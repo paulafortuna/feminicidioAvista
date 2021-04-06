@@ -6,12 +6,14 @@
 
 
 ### Repository
-This repository presents the structure of the "Feminicídio À Vista" project. It centralizes the back-end of this project, and it links to the [front-end](https://github.com/paulafortuna/feminicidioAvista_dash) repository and the annotated [dataset](https://github.com/paulafortuna/feminicidioAvista_dataset). The following scheme summarizes the project and readme structure.
+This repository presents the structure of the "Feminicídio À Vista" project. It centralizes the back-end, and it links to the [front-end](https://github.com/paulafortuna/feminicidioAvista_dash) repository and the annotated [dataset](https://github.com/paulafortuna/feminicidioAvista_dataset). The following scheme summarizes the project and readme structure.
 
 ![project_structure](https://github.com/paulafortuna/images/blob/main/feminicidio(4).jpg)
 
 ### 1) Femicide News Crawler in Arquivo.pt (Python Back-end Container)
-It corresponds to crawling directory inside the project. The Arquivo.pt offers an API where it is possible to crawl all Portuguese web since 1994. We aimed at collecting all available news referring to femicide cases in Portuguese Newspapers. The news were introduced in the MongoDB database. The set of steps that are followed in the Crawling container are described in the app.py file and can be summarized in this figure:
+The first directory inside this project is *crawling*. It corresponds to a Docker container that will connect to the Arquivo.pt API and later to the database container. The Arquivo.pt offers an API where it is possible to crawl all Portuguese web since 1994. I aimed at collecting all available news referring to femicide cases in Portuguese Newspapers. The news were introduced in the MongoDB database. The set of followed steps in the Crawling container are described in the 
+[app.py](https://github.com/paulafortuna/feminicidioAvista/blob/main/crawling/app.py) file and can be summarized in this figure:
+
 
 ![scheme1](https://github.com/paulafortuna/images/blob/main/schema1.jpg)
 
