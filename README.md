@@ -50,10 +50,10 @@ The code for this container is present in the /classification directory. The fol
 ![scheme3](https://github.com/paulafortuna/images/blob/main/scheme_3.jpg)
 
 #### 3.1 Femicide news manual annotation
-First, the annotation of news as referring to a femicide case was conducted manually. I started by opening the file in ~/python/data directory, transferring it to any spreadsheet editor and manually tagging news. The resulting file can be found in this [repository](https://github.com/paulafortuna/feminicidioAvista_dataset). 
+First, the annotation of news as referring to a femicide case was conducted manually. I started by opening the file in ~/python/data directory, transferring it to any spreadsheet editor and manually tagging news. Around 700 news were annotated and marked as femicide, and this procedure took 3h to be applied. The resulting file can be found in this [file](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/data/classified_news.tsv). 
 
 #### 3.2 Geo NER Extraction
-
+With the annotated data I aimed then at automatically extract the geolocation of the news. For this, I extracted from the news title and text all entities of type "LOC" (local). I used SpaCy with the Portuguese model pt_core_news_sm as can be found in the [jupyter notebook](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/statistics_plot_computation.ipynb). 
 
 #### 3.3 Coordinates and District Extraction
 
@@ -65,6 +65,9 @@ First, the annotation of news as referring to a femicide case was conducted manu
 
 
 ### 4) Femicide News Annotated Dataset
+The resulting file can be found in this [repository](https://github.com/paulafortuna/feminicidioAvista_dataset). 
+
+
 ### 5) Dash Front-end (Feminicídio À Vista Web App)
 
 ### Extra: Configuration with docker-compose
