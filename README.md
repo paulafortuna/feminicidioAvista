@@ -79,9 +79,11 @@ The front end of this web application was developed can be found in this [reposi
 1) Install [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) and [Docker-compose](https://docs.docker.com/compose/install/).
 2) run docker compose
 
+```bash
 cd feminicidioAvista
 docker-compose build
 docker-compose up -d
+´´´
 
 ### Future development
 
