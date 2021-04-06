@@ -92,6 +92,7 @@ import python crawler in the docker and connect with the mongodb
 
 - Include Madeira and Azores data.
 - Include international data.
+- Include other news sources.
 - Report on news about "feminicide" phenomenon.
 - Conduct deeper qualitative analysis in the feminicide cases news.
 - Conduct deeper quantitative and classification analysis in the feminicide cases news.
