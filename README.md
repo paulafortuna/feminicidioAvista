@@ -20,7 +20,8 @@ The first directory inside this project is *crawling*. It corresponds to a Docke
 
 
 #### 1.1 Crawling
-We started by enumerating all relevant newspapers: Público, Expresso, Diário de Notícias, Correio da Manhã, Sol, Visão e Jornal de Notícias. Arquivo.pt API allows different search methods. In this case enumerating keywords seemed a good approach. For this, a thorough keyword list was built. For instance, keyword such as "assassina mulher" (murders woman), for the entire list check Variables.py or the annotated dataset repository. Regarding the Arquivo.pt API the request was done with the following parameters:
+The goal here is to find news about femicide cases. I started by enumerating all relevant newspapers: Público, Expresso, Diário de Notícias, Correio da Manhã, Sol, Visão e Jornal de Notícias. Because Arquivo.pt API allows a keyword search method, enumerating keywords seemed a good approach. For this, a thorough keyword list was built. For instance, keywords such as "assassina mulher" (murders woman) were included (for the entire list check the [Variables](https://github.com/paulafortuna/feminicidioAvista/blob/main/crawling/Variables.py) class or the annotated [dataset](https://github.com/paulafortuna/feminicidioAvista_dataset). Regarding the Arquivo.pt API the request was done with the following parameters:
+
 
 ```python
 q = keyword
