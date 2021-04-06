@@ -37,7 +37,7 @@ sleep = 0.31
 The news crawling took around 3 days.
 
 #### 1.2 Pos-processing
-The pos processing consisted of cleaning the database and storing a subset of news. The post processing took care of: erase news without title or text, erase news where the text has less than 4 words and drop news with a repeated title.
+The post processing consisted of cleaning the database and storing a subset of news. The post processing took care of: erase news without title or text, erase news where the text has less than 4 words and drop news with a repeated title.
 
 #### 1.3 Keyword confirmation
 It was not 100% transparent the matching between Keywords and pages happening in Arquivo.pt. For instance, I verified that some news pages would match but because in the footnote there would be a referrence to the keywords. It was then important to conduct a new filtering to assure that news title or body contains keywords. I've considered a keyword match if the there are matching of all keywords subwords independently of its position.
@@ -53,16 +53,16 @@ The code for this container is present in the *classification* directory. The fo
 ![scheme3](https://github.com/paulafortuna/images/blob/main/scheme_3.jpg)
 
 #### 3.1 Femicide news manual annotation
-First, the annotation of news as referring to a femicide case was conducted manually. I started by opening the file in ~/python/data directory, transferring it to any spreadsheet editor and manually tagging news. Around 700 news were annotated and marked as femicide, and this procedure took 3h to be applied. Here is the resulting [file](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/data/classified_news.tsv). 
+First, the annotation of news as referring to a femicide case was conducted manually. I started by opening the file in ~/python/data directory, transferring it to any spreadsheet editor and manually tagging news. Around 700 news were annotated and marked as femicide. Here is the resulting [file](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/data/classified_news.tsv). 
 
 #### 3.2 Geo NER Extraction
 With the annotated data I aimed then to automatically extract the geolocation of the news. For this, I extracted from the news title and text all entities of type "LOC" (local). I used SpaCy with the Portuguese model  [pt_core_news_sm](https://spacy.io/models/pt) as can be found in the [jupyter notebook](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/statistics_plot_computation.ipynb). 
 
 #### 3.3 Coordinates and District Extraction
-With the entities extracted from the previous step, I've used the [geopy library](https://geopy.readthedocs.io/en/stable/) and Nominatim API which offers an interface to the OpenStreetMap, for each entity I've extracted latitude and longitude, and for each news I've averaged the different local entities positions so this maps to a unique point that centralizes where the crime has happened. This is an approximation and it implies some error, but overall the results seem quite satisfying when displayed in the [map](https://feminicidioavista.herokuapp.com/). In our web app, we have displayed only Continental Portugal crimes, and have excluded either other countries or Azores and Madeira, which should be addressed in future venues of this project.
+With the entities extracted from the previous step, I've used the [geopy library](https://geopy.readthedocs.io/en/stable/) and Nominatim API which offers an interface to the OpenStreetMap. For each entity I've extracted latitude and longitude, and for each news I've averaged the different local entities positions so this maps to a unique point that centralizes where the crime has happened. This is an approximation and it implies some error, but overall the results seem quite satisfying when displayed in the [map](https://feminicidioavista.herokuapp.com/). In our web app, we have displayed only Continental Portugal crimes, and have excluded either other countries or Azores and Madeira, which should be addressed in future venues of this project.
 
 #### 3.4 Metrics
-Regarding metrics, we extracted femicide news frequencies over year and district. We also presented different tables where the different news titles can be read. This helps to understand the collected news and to have an idea on how the media is presenting femicide. This should bring insight to future steps of this project.
+Regarding metrics, I extracted femicide news frequencies over year and district. I also presented different tables where the different news titles can be read. This helps to understand the collected news and to have an idea on how the media is presenting femicide. This should bring insight to future steps of this project.
 
 ![news_ano_distrito](https://github.com/paulafortuna/images/blob/main/ano_distrito.svg)
 
