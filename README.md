@@ -56,6 +56,7 @@ First, the annotation of news as referring to a femicide case was conducted manu
 With the annotated data I aimed then at automatically extract the geolocation of the news. For this, I extracted from the news title and text all entities of type "LOC" (local). I used SpaCy with the Portuguese model pt_core_news_sm as can be found in the [jupyter notebook](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/statistics_plot_computation.ipynb). 
 
 #### 3.3 Coordinates and District Extraction
+With the entities extracted from the previous step I've used the geopy library and Nominatim API which offers an interface to the OpenStreetMap, for each entity I've extracted latitude and longitude, and for each news I've averaged the different local entities positions so this maps to an unique point that centralizes where the crime have happened. Of course this is an approximation and it implies some error, but overall the results seem quite satisfying, when displayed in the [map](https://feminicidioavista.herokuapp.com/). In our web app we have displayed only Continental Portugal crimes, and have excluded either other countries or Azores and Madeira, which should be addressed in future venues of this project.
 
 #### 3.4 Metrics
 
