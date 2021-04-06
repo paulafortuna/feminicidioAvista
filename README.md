@@ -60,8 +60,9 @@ With the entities extracted from the previous step I've used the geopy library a
 
 #### 3.4 Metrics
 Regarding metrics we extracted femicide news frequencies over year and district. We also presented different tables where the different news titles can be read. This helps to understand the collected news and to have an idea on how the media is presenting femicide. This should bring insight to future steps of this project.
-![news_ano](https://github.com/paulafortuna/images/blob/main/scheme_3.jpg)
-![news_distrito](https://github.com/paulafortuna/images/blob/main/scheme_3.jpg)
+
+![news_ano](https://github.com/paulafortuna/images/blob/main/ano.png)
+![news_distrito](https://github.com/paulafortuna/images/blob/main/distrito.png)
 
 
 #### *** Automatic Classification
