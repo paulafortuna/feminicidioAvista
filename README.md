@@ -45,6 +45,8 @@ The database in this project contains a collection for each of the steps happeni
 ![scheme1](https://github.com/paulafortuna/images/blob/main/schema2.jpg)
 
 ### 3) News Annotation and Metrics (Python Back-end Container)
+First, the annotation of news as referring to a femicide case was conducted manually. I started by opening the file in ~/python/data directory, transferring it to any spreadsheet editor and manually tagging news. The resulting file can be found in this [repository](https://github.com/paulafortuna/feminicidioAvista_dataset). 
+
 ### 4) Femicide News Annotated Dataset
 ### 5) Dash Front-end (Feminicídio À Vista Web App)
 
