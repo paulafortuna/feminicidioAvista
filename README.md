@@ -76,17 +76,12 @@ The front end of this web application was developed can be found in this [reposi
 
 ### Extra: Configuration with docker-compose
 
+1) Install [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) and [Docker-compose](https://docs.docker.com/compose/install/).
+2) run docker compose
 
-
-
-1) basic instructions to build the individual containers:
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
-
-2) import the build containers to other machines:
-
-Next steps:
-
-import python crawler in the docker and connect with the mongodb
+cd feminicidioAvista
+docker-compose build
+docker-compose up -d
 
 ### Future development
 
