@@ -61,7 +61,6 @@ import time
 
 # In[82]:
 
-
 nlp = spacy.load('pt_core_news_lg')
 geolocator = Nominatim(user_agent="dictionary_experiment")
 
