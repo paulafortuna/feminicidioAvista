@@ -63,14 +63,16 @@ Regarding metrics we extracted femicide news frequencies over year and district.
 
 ![news_ano_distrito](https://github.com/paulafortuna/images/blob/main/ano_distrito.svg)
 
+Other result of this module was the computed plotly plots and tables that are then going to be visualized in the web app. The code for producing plots can also be found in this [jupyter notebook](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/statistics_plot_computation.ipynb). The resulting json files are in this [directory](https://github.com/paulafortuna/feminicidioAvista/tree/main/classification/data_to_visualize).
+
 #### *** Automatic Classification
 I've investigated the usability of this dataset for machine learning seupervised classification tasks. I've used BERT multilingual, which can be applied to Portuguese. The calssification results with this dataset seem that in the future a automatic classifier can be used to crawl all the available news in order to find new crime instances. In the exxtracted metrics and web app section I've opted to present only manually annotated data, so that the presented results are more ethical and absent of automatic classification error. I run the BERT classifier code in colab, so that I've access to TPU. Here it is the link for this [project](https://colab.research.google.com/drive/1PwI75NtL-OIJ46tbrcDcyOVWwdvAbYUD?usp=sharing).  
 
 ### 4) Femicide News Annotated Dataset
-The resulting file can be found in this [repository](https://github.com/paulafortuna/feminicidioAvista_dataset). 
-
+The resulting dataset can be found in this [repository](https://github.com/paulafortuna/feminicidioAvista_dataset). 
 
 ### 5) Dash Front-end (Feminicídio À Vista Web App)
+The front end of this web application was developed can be found in this [repository](https://github.com/paulafortuna/feminicidioAvista_dash). I've opted to do it in a isolated repository so that I can continuosly integrate and deploy the github code to heroku. The processed data and plots that will serve as input for the web app can be found [directory](https://github.com/paulafortuna/feminicidioAvista/tree/main/classification/data_to_visualize) and should be copied [directory](https://github.com/paulafortuna/feminicidioAvista_dash/tree/main/data_to_visualize). I've opted to pre-compute data and plots for a matter ofefficiency and code modularity. The resulting website can be found [here](https://feminicidioavista.herokuapp.com/).
 
 ### Extra: Configuration with docker-compose
 
