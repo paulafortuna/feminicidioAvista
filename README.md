@@ -4,6 +4,13 @@
 
 ### Manifesto
 
+O objectivo da plataforma Feminicídio à Vista é dar visibilidade ao problema do feminicídio e não deixar que as mulheres assassinadas sejam esquecidas. Para isso, o Arquivo.pt permitiu recuperar estas histórias e anotar um conjunto de dados sobre feminicídios que se disponibilizam à comunidade. Estes dados podem ser utilizados não só por outros investigadores, mas também para construir modelos com tecnologias de inteligência artificial para anotar novas notícias e propriedades das notícias referentes a feminicídios.
+
+Feminicídio é um termo relativamente recente, que designa o extermínio de mulheres.Estes crimes não podem ser vistos como desligados das questões de género e da intencionalidade de controlar a existência e comportamento femininos. Em alguns países, o termo feminicídio passou a estar contemplado na lei. Contudo, esse não é o caso de Portugal. Em Portugal, existe um vazio legal [5] e falta de estudos a respeito do feminicídio [1].
+
+O projecto Feminicidio à Vista complementa outros esforços de investigação [6] ao disponibilizar à comunidade não só um conjunto de dados mas também uma plataforma open source. Nesta é possível de uma relembrar as vítimas e de uma forma dinâmica ver a relação entre as notícias individuais e estatísticas no tempo e espaço. Se, por um lado, os dados apresentados fazem referência a casos individuais de feminicídio, por outro lado, o feminicídio é um problema que requer uma resposta da sociedade. Para isso é necessário agir e os primeiros passos são reconhecer o feminicídio legalmente, recolher dados e analizá-los para se poder intervir.
+
+*Este projeto não é*: um conjunto de estatísticas oficial sobre o feminicídio em Portugal. Neste projeto foram recolhidas notícias no Arquivo.pt como fonte de informação. Este método pode por si só conter erros e deixar de fora alguns casos. Este projecto é apenas um esforço inicial de recolha de dados, que aponta a necessidade de documentar estes crimes oficialmente e de forma mais estruturada.
 
 ### Repository
 This repository presents the structure of the "Feminicídio À Vista" project. It centralizes the back-end, and it links to the [front-end](https://github.com/paulafortuna/feminicidioAvista_dash) repository and the annotated [dataset](https://github.com/paulafortuna/feminicidioAvista_dataset). The following scheme summarizes the project and readme structure.
