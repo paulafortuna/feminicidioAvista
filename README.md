@@ -13,8 +13,11 @@ O projecto Feminicidio à Vista complementa outros esforços de investigação [
 *Este projeto não é*: um conjunto de estatísticas oficial sobre o feminicídio em Portugal. Neste projeto foram recolhidas notícias no Arquivo.pt como fonte de informação. Este método pode por si só conter erros e deixar de fora alguns casos. Este projecto é apenas um esforço inicial de recolha de dados, que aponta a necessidade de documentar estes crimes oficialmente e de forma mais estruturada.
 
 *Sources*
+
 [1] [A transversalidade dos crimes de femicídio/feminicídio no Brasil e em Portugal](https://hdl.handle.net/10216/123178)
+
 [2] [Femminicidio in Europa un confronto tra paesi](https://www.europeandatajournalism.eu/ita/Notizie/Data-news/Femminicidio-in-Europa-un-confronto-tra-paesi)
+
 [3] [Observatorio de mulheres assassinadas](http://www.umarfeminismos.org/index.php/observatorio-de-mulheres-assassinadas)
 
 
