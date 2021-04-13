@@ -98,10 +98,10 @@ O Front-End desta aplicação foi desenvolvido com [dash](https://dash.plotly.co
 Criou-se um repositório isolado para que se pudesse fazer CI/CD (integração e deplyment contínuos) com GitHub e Heroku. Portanto, neste caso existe uma vantagem em criar um projecto isolado com o mínimo código possível. Os dados e gráficos que vão ser usados nesta aplicação podem ser encontrados neste [directório](https://github.com/paulafortuna/feminicidioAvista/tree/main/classification/data_to_visualize) e devem ser copiados para [aqui](https://github.com/paulafortuna/feminicidioAvista_dash/tree/main/data_to_visualize). Optou-se por pré-compilar dados e hráficos para que a visualização fosse mais eficiente e também para que o código apresente uma estrutura mais modular de separalão de back e fron-end. Infelizmente, quando deployed no Heroku, o site [Feminicídio À Vista](https://feminicidioavista.herokuapp.com/) pode demorar algum tempo a fazer load (~10 segundos), o que provavelmente estará relacionado com a utilização desta tecnologia pois localmente não se verifica tal problema.
 
 ### Extra: Confuguração do docker-compose
-This configuration was run in a machine using ubuntu. Hence, other OS may face some additional issues. In any case, the code was organized in such a way that minor changes are needed in case you want to run it without Docker.
+Estas instruções foram corridas numa mãquina com Ubunto. Portanto, é possível que outros sistemas operativos encontrem necessitem de outras instruções. De qualquer forma, tentou-se organizar o código de forma clara e que seja fácil de correr mesmo sem usar Docker.
 
 1) Install [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) and [Docker-compose](https://docs.docker.com/compose/install/).
-2) run docker-compose
+2) run docker-compose:
 
 ```bash
 cd feminicidioAvista
@@ -109,18 +109,18 @@ docker-compose build
 docker-compose up -d
 ```
 
-### Future development
+### Futuro do projeto
 
-- Include Madeira and Azores data.
-- Include international data.
-- Include other news sources.
-- Report on news about "feminicide" phenomenon.
-- Conduct deeper qualitative analysis in the feminicide cases news.
-- Conduct deeper quantitative and classification analysis in the feminicide cases news.
-- Improve web app, by replacing dash that proved to be slow and with limited design.
+- Encontrar parceiros.
+- Incluir dados sobre Madeira e Açores.
+- Incluir dados internacionais.
+- Incluir outras fontes de notícias.
+- Mostrar também outro tipo de notícias referentes ao fenómeno do feminicídio.
+- Aprofundar análises quantitativas e qualitativas nas notícias sobre casos de feminicídio.
+- Melhorar a aplicação web e substituir dash, uma vez que demonstrou ser lento e com um design limitado.
 
 ### Contact
 
-In case you have any contact, suggestion or will to collaborate in this project, please contact me through my [LinkedIn](
+Em caso de sugestões, ou interesse em colaborar, por faor, contactar através do meu [LinkedIn](
 https://pt.linkedin.com/in/paula-fortuna-a6b75a7a).
 
