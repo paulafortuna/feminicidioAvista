@@ -2,6 +2,9 @@
 
 ![main_icons](https://github.com/paulafortuna/images/blob/main/icons_2.jpg)
 
+([English Available](https://github.com/paulafortuna/feminicidioAvista/blob/main/readme_en))
+
+
 ### Manifesto
 
 O objectivo da plataforma Feminicídio à Vista é dar visibilidade ao problema do feminicídio e não deixar que as mulheres assassinadas sejam esquecidas. Para isso, o Arquivo.pt permitiu recuperar estas histórias e anotar um conjunto de dados sobre feminicídios que se disponibilizam à comunidade. Estes dados podem ser utilizados não só por outros investigadores, mas também para construir modelos com tecnologias de inteligência artificial para anotar novas notícias e propriedades das notícias referentes a feminicídios.
