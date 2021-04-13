@@ -55,11 +55,11 @@ sleep = 0.31
 
 O crawling de notícias demorou certa de 3 dias.
 
-#### 1.2 Pos-processing
-The post processing consisted of cleaning the database and storing a subset of news. The post processing took care of: erase news without title or text, erase news where the text has less than 4 words and drop news with a repeated title.
+#### 1.2 Pós processamento
+O pós processamento consistiu em limpar a base de dados e guardar apenas um subconjunto das páginas recolhidas. Esta fase consistiu em: remover notícias sem título ou texto, remover notícias se o título tivesse menos de 4 palavras e eliminar notícias com título repetido.
 
-#### 1.3 Keyword confirmation
-It was not 100% transparent the matching between Keywords and pages happening in Arquivo.pt. For instance, I verified that some news pages would match but because in the footnote there would be a referrence to the keywords. It was then important to conduct a new filtering to assure that news title or body contains keywords. I've considered a keyword match if the there are matching of all keywords subwords independently of its position.
+#### 1.3 Confirmação das Keywords
+Uma vez que a seleção de páginas com keywords através da API do Arquivo.pt não é 100% transparente. For instance, I verified that some news pages would match but because in the footnote there would be a referrence to the keywords. It was then important to conduct a new filtering to assure that news title or body contains keywords. I've considered a keyword match if the there are matching of all keywords subwords independently of its position.
 
 ### 2) Femicide News Storage (MongoDB  Container)
 The database in this project contains a collection for each of the steps happening in the previous section. I've opted for this strategy so that I keep always a copy of the data and new experiments for each step can be done later. The corresponding database structure is:
