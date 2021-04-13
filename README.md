@@ -59,14 +59,14 @@ O crawling de notícias demorou certa de 3 dias.
 O pós processamento consistiu em limpar a base de dados e guardar apenas um subconjunto das páginas recolhidas. Esta fase consistiu em: remover notícias sem título ou texto, remover notícias se o título tivesse menos de 4 palavras e eliminar notícias com título repetido.
 
 #### 1.3 Confirmação das Keywords
-Uma vez que a seleção de páginas com keywords através da API do Arquivo.pt não é 100% transparente. For instance, I verified that some news pages would match but because in the footnote there would be a referrence to the keywords. It was then important to conduct a new filtering to assure that news title or body contains keywords. I've considered a keyword match if the there are matching of all keywords subwords independently of its position.
+Uma vez que a seleção de páginas com keywords através da API do Arquivo.pt não é 100% transparente. Por exemplo, verificou-se que algumas páginas eram selecionadas porque no rodapé estaria uma referência às palavras pesquisadas, mas sem esta fazer parte do conteúdo da notícia.Foi então importante realizar uma nova filtragem, para assegurar que ou o título ou o corpo da notícia continham alguma das palavras-chave. Considerou-se que a notícia contém a keyword quando todas as subpalavras estão na notícia independentemente da posição. 
 
-### 2) Femicide News Storage (MongoDB  Container)
-The database in this project contains a collection for each of the steps happening in the previous section. I've opted for this strategy so that I keep always a copy of the data and new experiments for each step can be done later. The corresponding database structure is:
+### 2) Base de dados para as notícias referentes a feminicídios (Contentor em MongoDB)
+A base de dados neste projeto contém uma coleção para cada um dos passos a decorrer na secção anterior. Esta estratégia permite manter cópias dos dados nas várias fases da pipeline, o que pode ser útil caso se queiram implementar novas estratégias em cada um dos passos seguidos. A estrutura da base de dados é então:
 
 ![scheme1](https://github.com/paulafortuna/images/blob/main/schema2.jpg)
 
-### 3) News Annotation and Metrics (Python Back-end Container)
+### 3) Anotação de notícias e métricas (Contentor em Python - Back-end)
 
 The code for this container is present in the *classification* directory. The followed steps can be described in:
 ![scheme3](https://github.com/paulafortuna/images/blob/main/scheme_3.jpg)
