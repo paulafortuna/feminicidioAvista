@@ -2,7 +2,7 @@
 
 ![main_icons](https://github.com/paulafortuna/images/blob/main/icons_2.jpg)
 
-([English Available](https://github.com/paulafortuna/feminicidioAvista/blob/main/readme_en))
+([English Available](https://github.com/paulafortuna/feminicidioAvista/blob/main/README_EN.md))
 
 
 ### Manifesto
