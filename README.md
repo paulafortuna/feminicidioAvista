@@ -68,11 +68,11 @@ A base de dados neste projeto contém uma coleção para cada um dos passos a de
 
 ### 3) Anotação de notícias e métricas (Contentor em Python - Back-end)
 
-The code for this container is present in the *classification* directory. The followed steps can be described in:
+O código deste contentor pode ser encontrado no diretório *classification*. Os passos seguidos podem ser descritos através de:
 ![scheme3](https://github.com/paulafortuna/images/blob/main/scheme_3.jpg)
 
-#### 3.1 Femicide news manual annotation
-First, the annotation of news as referring to a femicide case was conducted manually. I started by opening the file in ~/python/data directory, transferring it to any spreadsheet editor and manually tagging news. Around 700 news were annotated and marked as femicide. Here is the resulting [file](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/data/classified_news.tsv). 
+#### 3.1 Anotação manual de notcícias de feminicídio
+Em primeiro, conduziu-se uma anotação manual de notícias referentes a feminicídios. Para isso deve encontrar-se o ficheiro gerado no passo anterior e depositado ~/python/data directory, e transferir-se para algum editor de texto ou spreadsheet e manualmente decidir se uma notícia corresponde a um caso de feminicídio. Cerca de 1100 notícias foram anotadas e 700 marcadas como feminicidio. Aqui pode ser encontrado o [ficheiro](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/data/classified_news.tsv) resultante da anotação. 
 
 #### 3.2 Geo NER Extraction
 With the annotated data I aimed then to automatically extract the geolocation of the news. For this, I extracted from the news title and text all entities of type "LOC" (local). I used SpaCy with the Portuguese model  [pt_core_news_sm](https://spacy.io/models/pt) as can be found in the [jupyter notebook](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/statistics_plot_computation.ipynb). 
