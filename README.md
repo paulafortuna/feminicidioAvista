@@ -121,6 +121,6 @@ docker-compose up -d
 
 ### Contact
 
-Em caso de sugestões, ou interesse em colaborar, por faor, contactar através do meu [LinkedIn](
+Em caso de sugestões, ou interesse em colaborar, por favor, contactar através do meu [LinkedIn](
 https://pt.linkedin.com/in/paula-fortuna-a6b75a7a).
 
