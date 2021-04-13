@@ -24,14 +24,14 @@ O projecto Feminicidio à Vista complementa outros esforços de investigação [
 [3] [Observatorio de mulheres assassinadas](http://www.umarfeminismos.org/index.php/observatorio-de-mulheres-assassinadas)
 
 
-### Repository
-This repository presents the structure of the "Feminicídio À Vista" project. It centralizes the back-end, and it links to the [front-end](https://github.com/paulafortuna/feminicidioAvista_dash) repository and the annotated [dataset](https://github.com/paulafortuna/feminicidioAvista_dataset). The following scheme summarizes the project and readme structure.
+### Repositório
+Este repositório apresenta a estrutura do projeto "Feminicídio À Vista". Centraliza o código para o back-end, referencia o repositório do [front-end](https://github.com/paulafortuna/feminicidioAvista_dash) e do [conjunto de dados](https://github.com/paulafortuna/feminicidioAvista_dataset) anotado. No esquema seguinte pode ver-se o sumário do projeto e estrutura deste README.
 
 ![project_structure](https://github.com/paulafortuna/images/blob/main/feminicidio(4).jpg)
 
-### 1) Femicide News Crawler in Arquivo.pt (Python Back-end Container)
-The first directory inside this project is *crawling*. It corresponds to a Docker container that will connect to the Arquivo.pt API and later to the database container. The Arquivo.pt offers an API where it is possible to crawl all Portuguese web since 1994. I aimed at collecting all available news referring to femicide cases in Portuguese Newspapers. The news collection was introduced in the MongoDB database. The set of followed steps in the Crawling container are described in the 
-[app.py](https://github.com/paulafortuna/feminicidioAvista/blob/main/crawling/app.py) file and can be summarized in this figure:
+### 1) Crawler de notícias referentes a feminicídios no Arquivo.pt (Contentor em Python - Back-end)
+O primeiro diretório neste projecto tem o nome *crawling*. Corresponde a um contentor de Docker que vai ligar à API do Arquivo.pt e ao contentor da base de dados. O Arquivo.pt oferece uma API onde é possível fazer crawling a toda a web portuguesa desde 1994. Neste caso o o objetivo é encontrar todas as notícias referentes a casos de feminicídio em jornais portugueses. Estas notícias são então introduzidas numa base de dados em MongoDB. Os passos seguidos neste contentor podem ser melhor compreendidos ao analizar o ficheiro 
+[app.py](https://github.com/paulafortuna/feminicidioAvista/blob/main/crawling/app.py) e podem ser sumarizados nesta figura:
 
 
 ![scheme1](https://github.com/paulafortuna/images/blob/main/schema1.jpg)
@@ -39,7 +39,7 @@ The first directory inside this project is *crawling*. It corresponds to a Docke
 
 
 #### 1.1 Crawling
-The goal here is to find news about femicide cases. I started by enumerating all relevant newspapers: Público, Expresso, Diário de Notícias, Correio da Manhã, Sol, Visão e Jornal de Notícias. Because of Arquivo.pt API allows a keyword search method, enumerating keywords seemed a good approach. For this, a thorough keyword list was built. For instance, keywords such as "assassina mulher" (murders woman) were included (for the entire list check the [Variables](https://github.com/paulafortuna/feminicidioAvista/blob/main/crawling/Variables.py) class or the annotated [dataset](https://github.com/paulafortuna/feminicidioAvista_dataset). Regarding the Arquivo.pt API the request was done with the following parameters:
+O objetivo era encontrar notícias sobre casos de feminicídio. O primeiro passo foi enumerar jornais relevantes para este fim. Neste caso escolheu-se: Público, Expresso, Diário de Notícias, Correio da Manhã, Sol, Visão e Jornal de Notícias. Uma vez que a API do Arquivo.pt permite pesquisar com palavras (keywords), enumerou-se um conjunto de keywords para restringir as notícias encontradas. Por exemplo, keywords como "assassina mulher" foram incluidas (para aceder à lista completa verificar ou a classe [Variables](https://github.com/paulafortuna/feminicidioAvista/blob/main/crawling/Variables.py) ou o [conjunto de dados anotado](https://github.com/paulafortuna/feminicidioAvista_dataset). As chamadas à API do Arquivo.pt foram feitas com os seguintes parâmetros:
 
 
 ```python
@@ -53,7 +53,7 @@ dedupValue = 20
 sleep = 0.31
 ```
 
-The news crawling took around 3 days.
+O crawling de notícias demorou certa de 3 dias.
 
 #### 1.2 Pos-processing
 The post processing consisted of cleaning the database and storing a subset of news. The post processing took care of: erase news without title or text, erase news where the text has less than 4 words and drop news with a repeated title.
