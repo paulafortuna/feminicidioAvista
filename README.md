@@ -71,10 +71,10 @@ A base de dados neste projeto contém uma coleção para cada um dos passos a de
 O código deste contentor pode ser encontrado no diretório *classification*. Os passos seguidos podem ser descritos através de:
 ![scheme3](https://github.com/paulafortuna/images/blob/main/scheme_3_pt.jpg)
 
-#### 3.1 Anotação manual de notcícias de feminicídio
+#### 3.1 Anotação manual de notícias de feminicídio
 Em primeiro, conduziu-se uma anotação manual de notícias referentes a feminicídios. Para isso deve encontrar-se o ficheiro gerado no passo anterior e depositado no diretório ~/python/data, transferir-se para algum editor de texto ou spreadsheet e manualmente decidir se uma notícia corresponde a um caso de feminicídio. 1356 notícias foram anotadas e cerca de 700 marcadas como feminicidio. Aqui pode ser encontrado o [ficheiro](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/data/classified_news.tsv) resultante da anotação. 
 
-#### 3.2 Extração de Geo NER 
+#### 3.2 Extração de Entidades
 Com os dados anotados o objetivo era agora atribuir às notícias uma posição no espaço. Para isso, extraiu-se automaticamente do título e texto da notícia entidades correspondentes a locais, o que corresponde a entidades do tipo "LOC" (local). Foi usado SpaCy com um modelo para português, [pt_core_news_sm](https://spacy.io/models/pt) e o código pode ser encontrado no [jupyter notebook](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/statistics_plot_computation.ipynb). 
 
 #### 3.3 Extração de coordenadas e distritos
