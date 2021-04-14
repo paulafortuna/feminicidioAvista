@@ -15,7 +15,7 @@ O projecto Feminicidio à Vista complementa outros esforços de investigação [
 
 *Este projeto não é*: um conjunto de estatísticas oficiais sobre o feminicídio em Portugal. Neste projeto foram recolhidas notícias no Arquivo.pt como fonte de informação. Este método pode por si só conter erros e deixar de fora alguns casos. Este projecto é apenas um esforço inicial de recolha de dados, que aponta a necessidade de documentar estes crimes oficialmente e de forma mais estruturada.
 
-*Sources*
+*Fontes*
 
 [1] [A transversalidade dos crimes de femicídio/feminicídio no Brasil e em Portugal](https://hdl.handle.net/10216/123178)
 
@@ -27,14 +27,14 @@ O projecto Feminicidio à Vista complementa outros esforços de investigação [
 ### Repositório
 Este repositório apresenta a estrutura do projeto "Feminicídio À Vista". Centraliza o código para o back-end, referencia o repositório do [front-end](https://github.com/paulafortuna/feminicidioAvista_dash) e do [conjunto de dados](https://github.com/paulafortuna/feminicidioAvista_dataset) anotado. No esquema seguinte pode ver-se o sumário do projeto e estrutura deste README.
 
-![project_structure](https://github.com/paulafortuna/images/blob/main/feminicidio(4).jpg)
+![project_structure](https://github.com/paulafortuna/images/blob/main/feminicidio(4)_pt.jpg)
 
-### 1) Crawler de notícias referentes a feminicídios no Arquivo.pt (Contentor em Python - Back-end)
+### 1) Crawler de notícias  de feminicídio no Arquivo.pt (Contentor em Python - Back-end)
 O primeiro diretório neste projecto tem o nome *crawling*. Corresponde a um contentor de Docker que vai ligar à API do Arquivo.pt e ao contentor da base de dados. O Arquivo.pt oferece uma API onde é possível fazer crawling a toda a web portuguesa desde 1994. Neste caso o o objetivo é encontrar todas as notícias referentes a casos de feminicídio em jornais portugueses. Estas notícias são então introduzidas numa base de dados em MongoDB. Os passos seguidos neste contentor podem ser melhor compreendidos ao analizar o ficheiro 
 [app.py](https://github.com/paulafortuna/feminicidioAvista/blob/main/crawling/app.py) e podem ser sumarizados nesta figura:
 
 
-![scheme1](https://github.com/paulafortuna/images/blob/main/schema1.jpg)
+![scheme1](https://github.com/paulafortuna/images/blob/main/schema1_pt.jpg)
 
 
 
@@ -58,21 +58,21 @@ O crawling de notícias demorou certa de 3 dias.
 #### 1.2 Pós processamento
 O pós processamento consistiu em limpar a base de dados e guardar apenas um subconjunto das páginas recolhidas. Esta fase consistiu em: remover notícias sem título ou texto, remover notícias se o título tivesse menos de 4 palavras e eliminar notícias com título repetido.
 
-#### 1.3 Confirmação das Keywords
+#### 1.3 Confirmação de Keywords
 Uma vez que a seleção de páginas com keywords através da API do Arquivo.pt não é 100% transparente. Por exemplo, verificou-se que algumas páginas eram selecionadas porque no rodapé estaria uma referência às palavras pesquisadas, mas sem esta fazer parte do conteúdo da notícia.Foi então importante realizar uma nova filtragem, para assegurar que ou o título ou o corpo da notícia continham alguma das palavras-chave. Considerou-se que a notícia contém a keyword quando todas as subpalavras estão na notícia independentemente da posição. 
 
 ### 2) Base de dados para as notícias referentes a feminicídios (Contentor em MongoDB)
 A base de dados neste projeto contém uma coleção para cada um dos passos a decorrer na secção anterior. Esta estratégia permite manter cópias dos dados nas várias fases da pipeline, o que pode ser útil caso se queiram implementar novas estratégias em cada um dos passos seguidos. A estrutura da base de dados é então:
 
-![scheme1](https://github.com/paulafortuna/images/blob/main/schema2.jpg)
+![scheme1](https://github.com/paulafortuna/images/blob/main/schema2_pt.jpg)
 
 ### 3) Anotação de notícias e métricas (Contentor em Python - Back-end)
 
 O código deste contentor pode ser encontrado no diretório *classification*. Os passos seguidos podem ser descritos através de:
-![scheme3](https://github.com/paulafortuna/images/blob/main/scheme_3.jpg)
+![scheme3](https://github.com/paulafortuna/images/blob/main/scheme_3_pt.jpg)
 
 #### 3.1 Anotação manual de notcícias de feminicídio
-Em primeiro, conduziu-se uma anotação manual de notícias referentes a feminicídios. Para isso deve encontrar-se o ficheiro gerado no passo anterior e depositado ~/python/data directory, e transferir-se para algum editor de texto ou spreadsheet e manualmente decidir se uma notícia corresponde a um caso de feminicídio. 1356 notícias foram anotadas e cerca de 700 marcadas como feminicidio. Aqui pode ser encontrado o [ficheiro](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/data/classified_news.tsv) resultante da anotação. 
+Em primeiro, conduziu-se uma anotação manual de notícias referentes a feminicídios. Para isso deve encontrar-se o ficheiro gerado no passo anterior e depositado no diretório ~/python/data, transferir-se para algum editor de texto ou spreadsheet e manualmente decidir se uma notícia corresponde a um caso de feminicídio. 1356 notícias foram anotadas e cerca de 700 marcadas como feminicidio. Aqui pode ser encontrado o [ficheiro](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/data/classified_news.tsv) resultante da anotação. 
 
 #### 3.2 Extração de Geo NER 
 Com os dados anotados o objetivo era agora atribuir às notícias uma posição no espaço. Para isso, extraiu-se automaticamente do título e texto da notícia entidades correspondentes a locais, o que corresponde a entidades do tipo "LOC" (local). Foi usado SpaCy com um modelo para português, [pt_core_news_sm](https://spacy.io/models/pt) e o código pode ser encontrado no [jupyter notebook](https://github.com/paulafortuna/feminicidioAvista/blob/main/classification/statistics_plot_computation.ipynb). 
