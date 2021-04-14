@@ -95,10 +95,10 @@ O dataset resultante pode ser encontrado neste [repositório](https://github.com
 
 ### 5) Dash Front-end (Feminicídio À Vista Web App)
 O Front-End desta aplicação foi desenvolvido com [dash](https://dash.plotly.com/) e pode ser encontrado neste [repositório](https://github.com/paulafortuna/feminicidioAvista_dash). 
-Criou-se um repositório isolado para que se pudesse fazer CI/CD (integração e deplyment contínuos) com GitHub e Heroku. Portanto, neste caso existe uma vantagem em criar um projecto isolado com o mínimo código possível. Os dados e gráficos que vão ser usados nesta aplicação podem ser encontrados neste [directório](https://github.com/paulafortuna/feminicidioAvista/tree/main/classification/data_to_visualize) e devem ser copiados para [aqui](https://github.com/paulafortuna/feminicidioAvista_dash/tree/main/data_to_visualize). Optou-se por pré-compilar dados e hráficos para que a visualização fosse mais eficiente e também para que o código apresente uma estrutura mais modular de separalão de back e fron-end. Infelizmente, quando deployed no Heroku, o site [Feminicídio À Vista](https://feminicidioavista.herokuapp.com/) pode demorar algum tempo a fazer load (~10 segundos), o que provavelmente estará relacionado com a utilização desta tecnologia pois localmente não se verifica tal problema.
+Criou-se um repositório isolado para que se pudesse fazer CI/CD (integração e deplyment contínuos) com GitHub e Heroku. Portanto, neste caso existe uma vantagem em criar um projecto isolado com o mínimo código possível. Os dados e gráficos que vão ser usados nesta aplicação podem ser encontrados neste [directório](https://github.com/paulafortuna/feminicidioAvista/tree/main/classification/data_to_visualize) e devem ser copiados para [aqui](https://github.com/paulafortuna/feminicidioAvista_dash/tree/main/data_to_visualize). Optou-se por pré-compilar dados e gráficos para que a visualização fosse mais eficiente e também para que o código apresente uma estrutura mais modular de separalão de back e front-end. O site [Feminicídio À Vista](https://feminicidioavista.herokuapp.com/) está alojado em Herok.
 
-### Extra: Confuguração do docker-compose
-Estas instruções foram corridas numa mãquina com Ubunto. Portanto, é possível que outros sistemas operativos encontrem necessitem de outras instruções. De qualquer forma, tentou-se organizar o código de forma clara e que seja fácil de correr mesmo sem usar Docker.
+### Extra: Configuração do docker-compose
+Estas instruções foram corridas numa máquina com Ubunto. Portanto, é possível que outros sistemas operativos necessitem de outras instruções. De qualquer forma, tentou-se organizar o código de forma clara e fácil de correr, mesmo sem usar Docker.
 
 1) Install [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04) and [Docker-compose](https://docs.docker.com/compose/install/).
 2) run docker-compose:
@@ -121,6 +121,6 @@ docker-compose up -d
 
 ### Contact
 
-Em caso de sugestões, ou interesse em colaborar, por favor, contactar através do meu [LinkedIn](
+Em caso de sugestões, ou interesse em colaborar, por favor, contactar através do [LinkedIn](
 https://pt.linkedin.com/in/paula-fortuna-a6b75a7a).
 
