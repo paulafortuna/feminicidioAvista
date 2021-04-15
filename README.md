@@ -119,7 +119,7 @@ docker-compose up -d
 - Aprofundar análises quantitativas e qualitativas nas notícias sobre casos de feminicídio.
 - Melhorar a aplicação web e substituir dash, uma vez que demonstrou ser lento e com um design limitado.
 
-### Contact
+### Contato
 
 Em caso de sugestões, ou interesse em colaborar, por favor, contactar através do [LinkedIn](
 https://pt.linkedin.com/in/paula-fortuna-a6b75a7a).
